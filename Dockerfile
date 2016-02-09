@@ -14,7 +14,8 @@ RUN apk --update add \
       python \
       py-pip && \
       pip install --upgrade awscli s3cmd && \
-      mkdir /root/.aws
+      mkdir /root/.aws \
+      rm -rf /var/cache/apk/*
 
 COPY get-metadata /usr/local/bin/get-metadata
 
